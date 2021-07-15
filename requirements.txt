@@ -1,0 +1,5 @@
+pandas
+numpy
+chart_studio
+plotly
+fbprophet
