@@ -21,7 +21,7 @@ st.title('Stock Forecast App')
 DATA_URL= "stock_swe_20210401_small.csv"
 
 #readdata
-@st.cache(persist =True)
+#@st.cache(persist =True)
 def load_data():
 	data = pd.read_csv(DATA_URL, sep = ',',  decimal=",")
 	return data
