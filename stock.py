@@ -26,6 +26,7 @@ def load_data():
 	data = pd.read_csv(DATA_URL, sep = ',',  decimal=",")
 	return data
 data = load_data()
+print("WHAT IS GOIN ON HERE?", data)
 
 #data  = pd.read_csv('/Users/joeriksson/Desktop/python_data/stock_swe_2021401.csv',sep = ',',  decimal=",")
 stock_name = data['Name'].unique()
