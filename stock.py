@@ -22,10 +22,10 @@ DATA_URL= "stock_swe_20210401_small.csv"
 
 #readdata
 #@st.cache(persist =True)
-def load_data():
+def load_data(DATA_URL):
 	data = pd.read_csv(DATA_URL, sep = ',',  decimal=",")
 	return data
-data = load_data()
+data = load_data(DATA_URL)
 print("WHAT IS GOIN ON HERE?", data)
 
 #data  = pd.read_csv('/Users/joeriksson/Desktop/python_data/stock_swe_2021401.csv',sep = ',',  decimal=",")
