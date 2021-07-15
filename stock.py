@@ -16,7 +16,18 @@ def select_comapny(df,name):
     return work_data
 
 st.title('Stock Forecast App')
-data  = pd.read_csv('/Users/joeriksson/Desktop/python_data/stock_swe_2021401.csv',sep = ',',  decimal=",")
+
+#filelocation
+DATA_URL= "stock_swe_20210401_small.csv"
+
+#readdata
+@st.cache(persist =True)
+def load_data():
+	data = pd.read_csv(DATA_URL, sep = ',',  decimal=",")
+	return data
+data = load_data()
+
+#data  = pd.read_csv('/Users/joeriksson/Desktop/python_data/stock_swe_2021401.csv',sep = ',',  decimal=",")
 stock_name = data['Name'].unique()
 
 #data_set_uniqe = data['shortName'].unique()
