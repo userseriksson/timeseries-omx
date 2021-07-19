@@ -9,6 +9,9 @@ from plotly import graph_objs as go
 from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
 
+st.write("DB username:", st.secrets["volvo"])
+st.write("DB password:", st.secrets["duett"])
+
 # Extract one stock to predict 
 def select_comapny(df,name):
     work_data = df[df['Name']==name]
