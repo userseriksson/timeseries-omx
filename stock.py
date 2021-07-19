@@ -20,15 +20,12 @@ st.title('Stock Forecast App')
 #filelocation
 DATA_URL= "stock_swe_20210401_small.csv"
 
-#readdata
-#@st.cache(persist =True)
-def load_data(DATA_URL):
-	data = pd.read_csv(DATA_URL, sep = ',',  decimal=",")
-	return data
-data = load_data(DATA_URL)
-print("WHAT IS GOIN ON HERE?", data)
-
+#Find data from git: 
 #data  = pd.read_csv('/Users/joeriksson/Desktop/python_data/stock_swe_2021401.csv',sep = ',',  decimal=",")
+url = 'https://github.com/userseriksson/timeseries-omx/blob/main/stock_swe_20210401_small.csv?raw=true' 
+print(url)
+data = pd.read_csv(url, sep=';', error_bad_lines=False)
+
 stock_name = data['Name'].unique()
 
 #data_set_uniqe = data['shortName'].unique()
