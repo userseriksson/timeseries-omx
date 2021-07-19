@@ -10,11 +10,7 @@ from plotly import graph_objs as go
 from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
 
-st.write("DB username:", st.secrets["db_username"])
-st.write("DB password:", st.secrets["db_password"])
-
-st.write("Has environment variables been set:",
-		os.environ["db_username"] == st.secrets["db_username"])
+##### For later add an securety key ####
 
 # Extract one stock to predict 
 def select_comapny(df,name):
