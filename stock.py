@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import os
 #import chart_studio.plotly as plotly
 import plotly.figure_factory as ff
 import plotly.graph_objects as go_ob
@@ -11,6 +12,9 @@ from fbprophet.plot import plot_plotly
 
 st.write("DB username:", st.secrets["db_username"])
 st.write("DB password:", st.secrets["db_password"])
+
+st.write("Has environment variables been set:",
+		os.environ["db_username"] == st.secrets["db_username"])
 
 # Extract one stock to predict 
 def select_comapny(df,name):
